@@ -1,0 +1,122 @@
+/* Login.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap'); /* Using Inter for a modern look */
+/* If you still want "Lucida Handwriting", you can add it here, but be aware of system font limitations. */
+/* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap'); for a similar cursive font from Google Fonts */
+
+body {
+  font-family: 'Inter', sans-serif; /* Default font for the body */
+  background: hsl(226, 67%, 49%); /* A soft, light blue background */
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Prevent scrolling if content overflows */
+}
+
+.login-container {
+  width: 100%;
+  max-width: 420px; /* Increased max-width for better form size */
+  background: #ffffff; /* White background for the form */
+  padding: 45px; /* Increased padding */
+  border-radius: 12px; /* More rounded corners */
+  box-sizing: border-box;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Enhanced shadow for depth */
+  text-align: center; /* Center align content inside container */
+}
+
+.login-container h2 {
+  font-size: 2.2em; /* Larger heading */
+  color: hsl(0, 92%, 49%); /* Darker text for better contrast */
+  margin-bottom: 30px; /* More space below heading */
+  font-weight: 700; /* Bolder heading */
+}
+
+.login-container label {
+  display: block;
+  text-align: left; /* Align labels to the left */
+  margin-bottom: 8px; /* More space below labels */
+  font-weight: 600; /* Bolder labels */
+  color: #555; /* Slightly softer color for labels */
+  font-size: 1em; /* Standard font size */
+}
+
+.login-container input {
+  width: 100%;
+  padding: 14px 18px; /* Increased padding for inputs */
+  margin-bottom: 20px; /* More space below inputs */
+  border: 1px solid #c9d6df; /* Softer border color */
+  border-radius: 8px; /* Rounded input fields */
+  box-sizing: border-box;
+  font-size: 1.05em; /* Slightly larger text in inputs */
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-container input:focus {
+  border-color: #6a5acd; /* Highlight border on focus */
+  box-shadow: 0 0 0 3px rgba(106, 90, 205, 0.2); /* Subtle glow on focus */
+  outline: none; /* Remove default outline */
+}
+
+.login-container button[type="submit"] {
+  width: 100%;
+  padding: 15px; /* Larger padding for the button */
+  background-color: #6a5acd; /* A vibrant purple color */
+  color: white;
+  font-weight: bold;
+  font-size: 1.1em; /* Larger font size for button text */
+  border: none;
+  border-radius: 8px; /* Rounded button */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(106, 90, 205, 0.3); /* Shadow for the button */
+}
+
+.login-container button[type="submit"]:hover {
+  background-color: #5348a8; /* Darker purple on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+  box-shadow: 0 6px 20px rgba(106, 90, 205, 0.4); /* More pronounced shadow on hover */
+}
+
+.login-container p {
+  margin-top: 25px; /* Space above the "Don't have an account?" text */
+  color: #777; /* Softer text color */
+  font-size: 0.95em; /* Slightly smaller text */
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: #6a5acd; /* Matches the button color */
+  text-decoration: none; /* No underline by default */
+  cursor: pointer;
+  padding: 0;
+  font: inherit; /* Inherit font properties from parent */
+  font-weight: 600; /* Make link text bolder */
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.link-button:hover {
+  color: #5348a8; /* Darker color on hover */
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+  .login-container {
+    margin: 20px; /* Add margin on smaller screens */
+    padding: 30px; /* Reduce padding */
+  }
+
+  .login-container h2 {
+    font-size: 1.8em; /* Adjust heading size */
+    margin-bottom: 20px;
+  }
+
+  .login-container input,
+  .login-container button[type="submit"] {
+    padding: 12px 15px; /* Adjust padding */
+    font-size: 1em; /* Adjust font size */
+  }
+}

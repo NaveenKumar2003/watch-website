@@ -1,0 +1,39 @@
+.about-container {
+  position: relative;
+  width: 100vw;  /* 100% viewport width */
+  height: 100vh; /* 100% viewport height */
+  background-image: url('/bg.jpg'); /* Your background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: hsl(0, 100%, 99%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.about{
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+color: rgb(99, 8, 8);
+}
+
+
+.about-box {
+  padding: 30px;
+  background: linear-gradient(
+      90deg,
+      #eb13aa,
+      hsl(310, 100%, 57%),
+      #f8b20c,
+      #ba0f15,
+      hsl(352, 97%, 51%)
+    );
+  border-radius: 15px;
+  max-width: 1000px;
+  width: 50%;
+  box-shadow: 0 8px 20px rgba(185, 180, 180, 0.3);
+  z-index: 2;
+  text-align: left;
+  font-size: 1.2rem;
+}
+

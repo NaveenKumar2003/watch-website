@@ -1,0 +1,298 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma,  Verdana, sans-serif;
+  position: relative;
+  width: 100vw;  /* 100% viewport width */
+  height: 00vh; /* 100% viewport height */
+  background-image: url('/bg.jpg'); /* Your background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+.discount-tag {
+  background-color: #28a745; /* A clear green color */
+  color: white;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 0.8em;
+  margin-left: 5px;
+  font-weight: bold; /* Make the text bold */
+}
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  padding: 20px 40px;
+  color: white;
+  box-shadow: 0 4px 8px #fd1313;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.logo-text {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  margin-right: 10px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: "Lucida Handwriting", cursive;
+  text-align: left;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-links a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: #ffd700;
+  width: 0;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: #ffd700;
+}
+
+.watch-container {
+  padding:90px;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 80px;
+}
+
+.title {
+  padding:250px; /* HUGE padding! */
+  font-size:500px; /* HUGE font size! */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom:5px;
+  align-items: center;
+  padding:px; /* Large padding here too! */
+}
+.filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filters button {
+  padding: 5px 10px; /* Reduced padding significantly to make the button small */
+  border: 2px solid hsl(34, 100%, 52%);
+  background-color: transparent;
+  color: #0de2ea;
+  /* Removed invalid 'width: 5x;' and 'height: 5x;' properties */
+  font-weight: bold;
+  border-radius: 5px; /* Keeping a slight border-radius for a soft edge */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 12px; /* Small font size for a compact button */
+  white-space: nowrap; /* Ensures text stays on one line */
+}
+
+.filters button:hover,
+.filters button.active {
+  background-color: #af0c55;
+  color: #fff;
+  /* 'size: 10px;' was removed previously as it's invalid */
+}
+
+.center-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.search-input {
+  width: 35%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.sort-select {
+  width: 35%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.watch-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.watch-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(233, 2, 2, 0.955);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.watch-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px #ff0404;
+}
+
+.watch-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.watch-card h3 {
+  font-size: 16px;
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+.watch-card p {
+  font-size: 14px;
+  color: #777;
+}
+/* ... (previous CSS code) ... */
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px; /* Increased margin */
+}
+
+/* General button styles for actions */
+.actions button,
+.actions .add-to-cart-link { /* Apply styles to the Link as well */
+  padding: 8px 14px;
+  border: none;
+  background-color: hsl(48, 94%, 51%); /* Default for 'Buy Now' and others */
+  color: #fff;
+  font-size: 0.9em; /* Adjusted font size */
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none; /* For the Link component */
+  display: inline-block; /* For the Link component */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Specific style for "Add to Cart" button (the Link) */
+.actions .add-to-cart-link {
+  background-color: #ffd700; /* Yellow background for Add to Cart */
+  color: #333; /* Darker text for better contrast on yellow */
+  font-weight: bold; /* Make the text bold */
+}
+
+/* Hover state for all action buttons */
+.actions button:hover {
+  background-color: #444; /* Darker gray for general buttons on hover */
+}
+
+/* Hover state specifically for "Add to Cart" button */
+.actions .add-to-cart-link:hover {
+  background-color: #e6c200; /* Slightly darker yellow on hover */
+}
+
+/* ... (rest of your CSS code) ... */
+
+.wishlist-btn {
+  background-color: transparent;
+  color: #888;
+  border: 2px solid #888;
+  font-size: 18px;
+  padding: 6px 10px;
+  border-radius: 50%;
+  line-height: 1;
+}
+
+.wishlist-btn.liked {
+  color: red;
+  border-color: red;
+}
+
+.load-more {
+  display: block;
+  margin: 30px auto 0;
+  padding: 12px 30px;
+  font-size: 16px;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.load-more:hover {
+  background-color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .center-controls {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .search-input,
+  .sort-select {
+    width: 100%;
+  }
+
+  .watch-grid {
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .watch-grid {
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+  }
+}

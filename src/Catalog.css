@@ -1,0 +1,254 @@
+/* Watches.css (add these or similar for Catalog) */
+
+.watch-container {
+  padding: 20px;
+  max-width: 1200px;
+  background-color: #f30808ea;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: hsl(0, 30%, 95%);
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.filters button {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 8px 15px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.filters button.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.filters button:hover:not(.active) {
+  background-color: #e0e0e0;
+}
+
+.center-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.search-input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 200px;
+}
+
+.sort-select {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.watch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.watch-card {
+  border: 1px solid #eee;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgb(29, 245, 5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.watch-card img {
+  max-width: 100%;
+  height: 200px; /* Fixed height for consistency */
+  object-fit: contain; /* Ensures the image fits without distortion */
+  margin-bottom: 10px;
+  border-radius: 4px;
+  background-color: #ffff;
+}
+
+.watch-card h3 {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.watch-card p {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: hsl(0, 100%, 99%);
+  margin-right: 5px;
+}
+
+.current-price {
+  font-weight: bold;
+  color: #d9534f; /* Red color for discounted price */
+}
+
+.discount-tag {
+  background-color: #5cb85c;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 0.8em;
+  margin-left: 5px;
+}
+
+.rating-info {
+  margin-bottom: 10px;
+  font-size: 0.9em;
+}
+
+.stars {
+  color: gold; /* Or any star icon color */
+  margin-right: 5px;
+}
+
+.reviews {
+  color: #666;
+}
+
+.actions button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.actions button:hover {
+  background-color: #0056b3;
+}
+
+.wishlist-btn {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #ccc; /* Default grey heart */
+  transition: color 0.2s ease;
+  padding: 0; /* Remove default button padding */
+}
+
+.wishlist-btn.liked {
+  color: #e74c3c; /* Red heart when liked */
+}
+
+.load-more {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.load-more:hover {
+  background-color: #5a6268;
+}
+
+/* Styles for Catalog component */
+.catalog-detail-container {
+  padding: 40px;
+  max-width: 900px;
+  margin: 20px auto;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px #ffff12;
+  background-color: #fff;
+  text-align: center; /* Center content within the container */
+}
+
+.catalog-detail-container h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.catalog-detail-card {
+  display: flex;
+  flex-direction: column; /* Stack image and info on small screens */
+  align-items: center;
+  gap: 30px;
+}
+
+@media (min-width: 768px) {
+  .catalog-detail-card {
+    flex-direction: row; /* Side-by-side on larger screens */
+    text-align: left; /* Align text to left on larger screens */
+  }
+}
+
+.catalog-detail-image {
+  max-width: 100%; /* Ensure image is responsive */
+  width: 300px; /* Fixed width for the image in catalog detail */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgb(236, 209, 2);
+}
+
+.catalog-info {
+  flex: 1; /* Allows info section to take remaining space */
+}
+
+.catalog-info h3 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  color: hsl(47, 100%, 44%);
+}
+
+.catalog-info p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: #dcec02;
+}
+
+.catalog-info .actions {
+  margin-top: 20px;
+}
+
+.catalog-info .actions button {
+  margin-right: 15px; /* Spacing between buttons in catalog */
+}
+
+.catalog-detail-container a {
+  display: inline-block;
+  margin-top: 20px;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.catalog-detail-container a:hover {
+  text-decoration: underline;
+}

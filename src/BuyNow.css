@@ -1,0 +1,136 @@
+.buynow-card {
+  max-width: 150px; /* Reduced width to a smaller size */
+  margin: 1rem auto;
+  height: auto; /* Allow height to adjust based on content */
+  padding: 0.5rem; /* Keep padding small */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 6px; /* Slightly smaller border radius */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: hsl(0, 0%, 100%);
+  overflow: hidden; /* Ensures content outside the bounds is hidden */
+  display: flex; /* Enables flexbox for content alignment */
+  flex-direction: column; /* Stacks content vertically */
+  align-items: center; /* Centers content horizontally */
+  justify-content: center; /* Centers content vertically */
+}
+
+.buynow-card img {
+  max-width: 100%;
+  max-height: 60px; /* Reduced max height for the image */
+  object-fit: contain;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.buynow-card h2 {
+  font-size: 0.9rem; /* Reduced font size */
+  margin: 0;
+  text-align: center;
+}
+
+.buynow-card p {
+  font-size: 0.8rem; /* Reduced font size */
+  font-weight: 600;
+  margin: 0.25rem 0 0 0;
+  text-align: center;
+}
+
+.buynow-card .quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px; /* Reduced gap */
+  margin-bottom: 10px; /* Reduced margin */
+}
+
+.buynow-card .quantity-controls label {
+  font-weight: 600;
+  min-width: 40px; /* Reduced width */
+  font-size: 0.7rem; /* Reduced font size */
+}
+
+.buynow-card .quantity-controls button {
+  padding: 2px 4px; /* Reduced padding */
+  font-size: 0.8rem; /* Reduced font size */
+  border: 1.5px solid #007bff;
+  background-color: white;
+  color: #007bff;
+  border-radius: 4px; /* Smaller border radius */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  line-height: 1;
+}
+
+.buynow-card .quantity-controls button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.buynow-card .total-price {
+  font-weight: 600;
+  font-size: 0.9rem; /* Reduced font size */
+  margin-bottom: 0.5rem; /* Reduced margin */
+  color: #333; /* Changed to a visible color */
+}
+
+.buynow-card .payment-methods p {
+  font-weight: 600;
+  margin-bottom: 0.3rem; /* Reduced margin */
+  font-size: 0.75rem; /* Reduced font size */
+}
+
+.buynow-card .payment-methods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px; /* Reduced gap */
+  margin-bottom: 0.8rem; /* Reduced margin */
+}
+
+.buynow-card .payment-methods button {
+  padding: 4px 8px; /* Reduced padding */
+  border-radius: 4px; /* Smaller border radius */
+  border: 1.5px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  font-weight: 400;
+  flex: 1 1 40%;
+  transition: all 0.3s ease;
+  color: #333;
+  font-size: 0.75rem; /* Reduced font size */
+}
+
+.buynow-card .payment-methods button.selected {
+  border-color: #007bff;
+  background-color: #e0f0ff;
+  font-weight: 700;
+  color: #007bff;
+}
+
+.buynow-card .pay-now-button {
+  margin-top: 10px; /* Reduced margin */
+  width: 100%;
+  padding: 6px 0; /* Reduced padding */
+  font-size: 0.8rem; /* Reduced font size */
+  font-weight: 600;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px; /* Smaller border radius */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buynow-card .pay-now-button:hover {
+  background-color: #0056b3;
+}
+
+.buynow-card .back-link {
+  margin-top: 10px; /* Reduced margin */
+  text-align: center;
+  font-size: 0.7rem; /* Reduced font size */
+}
+
+.buynow-card .back-link a {
+  color: #007bff;
+  text-decoration: underline;
+  font-weight: 500;
+}
