@@ -176,4 +176,3 @@ function Watches({ addToCart }) {
 }
 
 export default Watches;
-

@@ -2,7 +2,7 @@
   max-width: 150px; /* Reduced width to a smaller size */
   margin: 1rem auto;
   height: auto; /* Allow height to adjust based on content */
-  padding: 0.5rem; /* Keep padding small */
+  padding: 5rem; /* Keep padding small */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   border-radius: 6px; /* Slightly smaller border radius */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -16,7 +16,7 @@
 
 .buynow-card img {
   max-width: 100%;
-  max-height: 60px; /* Reduced max height for the image */
+  max-height: 80px; /* Reduced max height for the image */
   object-fit: contain;
   border-radius: 6px;
   margin-bottom: 0.5rem;

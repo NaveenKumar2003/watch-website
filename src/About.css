@@ -36,4 +36,17 @@ color: rgb(99, 8, 8);
   text-align: left;
   font-size: 1.2rem;
 }
-
+.github{
+  background-color: rgb(236, 176, 11);
+  padding: 8px 14px;
+  border: none;
+  background-color: hsl(48, 94%, 51%); /* Default for 'Buy Now' and others */
+  color: #fff;
+  font-size: 0.9em; /* Adjusted font size */
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none; /* For the Link component */
+  display: inline-block; /* For the Link component */
+  white-space: nowrap;
+}

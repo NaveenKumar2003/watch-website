@@ -12,6 +12,10 @@ export default function About() {
           Our mission is to provide quality, style, and excellence in every watch we offer.
           Explore our curated collections and find your perfect watch today.
         </p>
+       <img src="/github.png" alt="GitHub Logo" width='80px' height='50px'></img>
+         <a 
+  href="https://github.com/NaveenKumar2003/watch-website" class='github'
+  >Git Hub</a>
       </div>
     </div>
   );

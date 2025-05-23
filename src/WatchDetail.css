@@ -1,0 +1,73 @@
+/* src/components/WatchDetail.css */
+
+.watch-detail-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+.watch-detail {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow-y: auto; /* Allow scrolling if content is too long */
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.watch-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.watch-name {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.watch-price {
+  font-size: 1.2em;
+  color: #28a745; /* Green color for price */
+}
+
+.add-to-cart-button {
+  background-color: #007bff; /* Blue color */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.add-to-cart-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.watch-offers {
+  list-style-type: none;
+  padding: 0;
+}

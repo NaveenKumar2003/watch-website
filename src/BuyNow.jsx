@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import './BuyNow.css';
+
 const watches = [
- { id: 1, image: "/watch1.jpg", name: "Titan Elite", price: 1999, gender: "Men", discount: 10, reviews: 125, stars: 4.5 },
+  { id: 1, image: "/watch1.jpg", name: "Titan Elite", price: 1999, gender: "Men", discount: 10, reviews: 125, stars: 4.5 },
   { id: 2, image: "/watch2.jpg", name: "Fossil Venture", price: 2499, gender: "Men", discount: 0, reviews: 80, stars: 4.0 },
   { id: 3, image: "/watch3.jpg", name: "Casio Tough Solar", price: 1799, gender: "Men", discount: 15, reviews: 200, stars: 4.7 },
   { id: 4, image: "/watch4.jpg", name: "Seiko Speedmaster", price: 2699, gender: "Men", discount: 5, reviews: 95, stars: 4.2 },
@@ -54,6 +55,7 @@ function BuyNow({ addToCart }) {
 
   const [quantity, setQuantity] = useState(1);
   const [paymentMethod, setPaymentMethod] = useState('');
+  const [showCreditCard, setShowCreditCard] = useState(false); // State to control credit card form visibility
 
   if (!watch) {
     return (
@@ -77,6 +79,7 @@ function BuyNow({ addToCart }) {
 
   const handlePaymentMethodSelect = (method) => {
     setPaymentMethod(method);
+    setShowCreditCard(method === "Credit Card"); // Show credit card form if selected
   };
 
   const handlePayNow = () => {
@@ -90,78 +93,76 @@ function BuyNow({ addToCart }) {
   };
 
   return (
-    <div style={{
-      maxWidth: 300,
-      margin: "9rem auto",
-      padding: '50px',
-      backgroundColor: "white",
-      boxShadow: "0 0 15px hsl(43, 94.30%, 47.80%)",
-      borderRadius: '20px',
-      fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
-    }}>
-      <h1 style={{textAlign: "center"}}>Buy Now</h1>
-      <img
-        src={watch.image}
-        alt={watch.name}
-        style={{ width: "100%", padding:'10px',maxHeight: 500, objectFit: "contain", borderRadius: 10 }}
-      />
-      <h2 style={{marginTop: '1rem'}}>{watch.name}</h2>
-      <p style={{ fontWeight:"bold", fontSize:"1.2rem" }}>Price: ${watch.price.toFixed(2)}</p>
+    <div className="buynow-card">
+      <h1>Buy Now</h1>
+      <img src={watch.image} alt={watch.name} />
+      <h2>{watch.name}</h2>
+      <p className="total-price">Price: ${watch.price.toFixed(2)}</p>
 
-      <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 15 }}>
-        <label style={{fontWeight:"600"}}>Quantity:</label>
-        <button onClick={() => handleQuantityChange(-1)} style={{ padding: "4px 10px", fontSize: "1.2rem" }}>-</button>
-        <span style={{ minWidth: 30, textAlign: "center", fontSize: "1.1rem" }}>{quantity}</span>
-        <button onClick={() => handleQuantityChange(1)} style={{ padding: "4px 10px", fontSize: "1.2rem" }}>+</button>
+      <div className="quantity-controls">
+        <label>Quantity:</label>
+        <button onClick={() => handleQuantityChange(-1)}>-</button>
+        <span>{quantity}</span>
+        <button onClick={() => handleQuantityChange(1)}>+</button>
       </div>
 
-      <p style={{ fontWeight: "600", fontSize: "1.2rem" }}>Total: ${totalPrice.toFixed(2)}</p>
+      <p className="total-price">Total: ${totalPrice.toFixed(2)}</p>
 
-      <div style={{ marginTop: 20 }}>
-        <p style={{ fontWeight: "600" }}>Select Payment Method:</p>
-        <div style={{ display: "flex", gap: 15, flexWrap: "wrap" }}>
-          {["Google Pay", "PhonePe", "PayTM", "Credit Card", "Debit Card"].map(method => (
+      <div className="payment-methods">
+        <p>Select Payment Method:</p>
+        <div>
+          {["Google Pay", "PhonePe", "Credit Card", "Debit Card"].map(method => (
             <button
               key={method}
               onClick={() => handlePaymentMethodSelect(method)}
-              style={{
-                padding: "10px 15px",
-                borderRadius: 5,
-                border: paymentMethod === method ? "2px solid #007bff" : "1px solid #ccc",
-                backgroundColor: paymentMethod === method ? "#e0f0ff" : "white",
-                cursor: "pointer",
-                fontWeight: paymentMethod === method ? "700" : "400",
-                flex: "1 1 40%"
-              }}
+              className={paymentMethod === method ? 'selected' : ''}
             >
-              {method}
+              <img 
+                src={method === "Google Pay" ? "/public/gpay.png" : 
+                     method === "PhonePe" ? "/public/phonepay.png" : 
+                     method === "Credit Card" ? "/public/credit.jpg" : 
+                     "/public/debit.jpg"} 
+                alt={`${method} logo`} 
+                style={{ width: '90px', marginRight: '8px' }} 
+              />
             </button>
           ))}
         </div>
       </div>
 
+      {showCreditCard && (
+        <div className="credit-card">
+          <h3>Credit Card Information</h3>
+          <form>
+            <label htmlFor="card-number">Card Number</label>
+            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" />
+
+            <label htmlFor="card-holder">Card Holder:</label>
+            <input type="text" id="card-holder" placeholder="Your Name" />
+
+            <div className="date-cvv">
+              <div>
+                <label htmlFor="validity">Expires On:</label>
+                <input type="text" id="validity" placeholder="MM/YY" />
+              </div>
+              <div>
+                <label htmlFor="cvv">CVV:</label>
+                <input type="text" id="cvv" placeholder="***" />
+              </div>
+            </div>
+          </form>
+        </div>
+      )}
+
       <button
         onClick={handlePayNow}
-        style={{
-          marginTop: 25,
-          width: "100%",
-          padding: "14px 0",
-          fontSize: "1.2rem",
-          fontWeight: "600",
-          backgroundColor: "#007bff",
-          color: "white",
-          border: "none",
-          borderRadius: 8,
-          cursor: "pointer"
-        }}
+        className="pay-now-button"
       >
         Pay Now
       </button>
 
-      <div style={{ marginTop: 20, textAlign: "center" }}>
-        <Link to="/catalog" style={{ color: "#007bff", textDecoration: "underline" }}>
-          Back to Catalog
-        </Link>
+      <div className="back-link">
+        <Link to="/catalog">Back to Catalog</Link>
       </div>
     </div>
   );
